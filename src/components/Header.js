@@ -28,12 +28,14 @@ const Header = () => {
   return (
     <StyledHeader id="masthead" className="site-header">
       <Container>
-        <Styled.h1>
-          <Link to="/" rel="home">
-            {title}
-          </Link>
-        </Styled.h1>
-        <Menu />
+        <Flex sx={{ justifyContent: `space-between`, alignItems: `center` }}>
+          <h1 sx={{ variant: `text.branding` }}>
+            <Link to="/" rel="home">
+              {title}
+            </Link>
+          </h1>
+          <Menu />
+        </Flex>
       </Container>
     </StyledHeader>
   )

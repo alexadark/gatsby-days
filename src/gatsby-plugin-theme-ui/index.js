@@ -1,6 +1,7 @@
 import colors from "./colors"
 import buttons from "./buttons"
 import menus from "./menus"
+import text from "./text"
 import { fonts, fontSizes, fontWeights, lineHeights, base } from "./typo"
 
 export default {
@@ -9,6 +10,7 @@ export default {
   fontSizes,
   fontWeights,
   lineHeights,
+  text,
   sizes: {
     container: 1024,
   },
