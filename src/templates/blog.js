@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import Pagination from "../components/Pagination"
+import GatsbyImg from "../components/GatsbyImage"
 
 const Blog = ({ data, pageContext }) => {
   const posts = data.wpgraphql.posts.nodes
@@ -12,16 +13,10 @@ const Blog = ({ data, pageContext }) => {
         data.wpgraphql &&
         posts.map(post => (
           <article key={post.id}>
-            {post.featuredImage && (
-              <img
-                src={post.featuredImage.sourceUrl}
-                alt={post.featuredImage.altText}
-              />
-            )}
-
+            <GatsbyImg img={post.featuredImage} />
             <h2>
               <Link
-                to={`/blog/${post.uri}`}
+                to={`/posts/${post.uri}`}
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />
             </h2>
@@ -54,8 +49,7 @@ export const pageQuery = graphql`
           excerpt
           date
           featuredImage {
-            altText
-            sourceUrl
+            ...GatsbyImageQuery
           }
         }
       }

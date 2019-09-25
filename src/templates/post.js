@@ -3,16 +3,14 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { PageTitle } from "../styles"
 import { Box } from "theme-ui"
+import GatsbyImg from "../components/GatsbyImage"
 
 const SinglePOST = ({ data }) => {
   const { content, featuredImage, title } = data.wpgraphql.post
 
   return (
     <Layout>
-      {featuredImage && (
-        <img src={featuredImage.sourceUrl} alt={featuredImage.altText} />
-      )}
-
+      <GatsbyImg img={featuredImage} />
       <PageTitle dangerouslySetInnerHTML={{ __html: title }} />
 
       <p className="content" dangerouslySetInnerHTML={{ __html: content }} />
@@ -28,8 +26,7 @@ export const pageQuery = graphql`
         title
         content
         featuredImage {
-          sourceUrl
-          altText
+          ...GatsbyImageQuery
         }
       }
     }
