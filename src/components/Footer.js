@@ -1,13 +1,12 @@
-import React from "react"
-import { Container } from "../styles"
-import styled from "styled-components"
-
-const StyledFooter = styled.footer`
-  @media (min-width: 768px) {
-    padding: 80px 0;
-  }
-  padding: 40px 0;
-`
+/** @jsx jsx */
+import {
+  jsx,
+  Container,
+  Footer as StyledFooter,
+  Box,
+  Flex,
+  Styled,
+} from "theme-ui"
 
 const Footer = () => (
   <StyledFooter>

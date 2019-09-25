@@ -1,49 +1,18 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+/** @jsx jsx */
+import { jsx, Box } from "theme-ui"
 
-const StyledPagination = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  padding-right: 50px;
-  margin-bottom: 40px;
-  .mutted {
-    color: #bbb;
-  }
-`
-const PageNumbers = styled.div`
-  a {
-    padding: 5px 10px;
-    background: #f5f5f5;
-    border: none;
-    margin-right: 5px;
-    &:hover {
-      background-color: #222;
-      color: #fff;
-    }
-  }
-`
-const PrevNextLinks = styled.div`
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 1px;
-  a {
-    padding-bottom: 5px;
-  }
-`
+import { Link } from "gatsby"
 
 const Pagination = ({ pageNumber, hasNextPage, allPosts, itemsPerPage }) => (
-  <StyledPagination>
+  <nav sx={{ variant: `menus.pagination` }}>
     {pageNumber > 1 && (
-      <PrevNextLinks>
+      <Box sx={{ variant: `menus.prevNextLinks` }}>
         <Link to={pageNumber > 2 ? `blog/${pageNumber - 1}` : `/`}>
           Previous Posts
         </Link>
-      </PrevNextLinks>
+      </Box>
     )}
-    <PageNumbers>
+    <Box sx={{ variant: `menus.pageNumbers` }}>
       {Array.from({ length: allPosts.length / itemsPerPage }, (_, i) => (
         <Link
           key={`pagination-number${i + 1}`}
@@ -52,13 +21,13 @@ const Pagination = ({ pageNumber, hasNextPage, allPosts, itemsPerPage }) => (
           {i + 1}
         </Link>
       ))}
-    </PageNumbers>
+    </Box>
     {hasNextPage && (
-      <PrevNextLinks>
+      <Box sx={{ variant: `menus.prevNextLinks` }}>
         <Link to={`blog/${pageNumber + 1}`}>Next Posts</Link>
-      </PrevNextLinks>
+      </Box>
     )}
-  </StyledPagination>
+  </nav>
 )
 
 export default Pagination

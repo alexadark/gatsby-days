@@ -1,8 +1,4 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+const autoprefixer = require("autoprefixer")
 const config = require("./config")
 module.exports = {
   siteMetadata: {
@@ -40,5 +36,16 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [
+          autoprefixer({
+            overrideBrowserslist: ["last 2 versions"],
+          }),
+        ],
+      },
+    },
   ],
 }

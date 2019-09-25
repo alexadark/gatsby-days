@@ -1,8 +1,7 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { PageTitle } from "../styles"
-import { Box } from "theme-ui"
 import GatsbyImg from "../components/GatsbyImage"
 
 const SinglePOST = ({ data }) => {
@@ -11,9 +10,11 @@ const SinglePOST = ({ data }) => {
   return (
     <Layout>
       <GatsbyImg img={featuredImage} />
-      <PageTitle dangerouslySetInnerHTML={{ __html: title }} />
-
-      <p className="content" dangerouslySetInnerHTML={{ __html: content }} />
+      <Styled.h1 dangerouslySetInnerHTML={{ __html: title }} />
+      <Styled.root
+        className="content"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </Layout>
   )
 }

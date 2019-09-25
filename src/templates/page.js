@@ -1,7 +1,8 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { PageTitle } from "../styles"
+
 import {
   ButtonBlock,
   FeaturesBlock,
@@ -21,8 +22,11 @@ const Page = ({ data }) => {
   } = data.wpgraphql.page
   return (
     <Layout>
-      <PageTitle dangerouslySetInnerHTML={{ __html: title }} />
-      <p className="content" dangerouslySetInnerHTML={{ __html: content }} />
+      <Styled.h1 dangerouslySetInnerHTML={{ __html: title }} />
+      <Styled.root
+        className="content"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
       {flexibleLayouts.length > 0 &&
         flexibleLayouts.map(block => {
           switch (block.__typename) {
