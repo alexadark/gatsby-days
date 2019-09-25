@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { PageTitle } from "../styles"
+import { Box } from "theme-ui"
 
 const SinglePOST = ({ data }) => {
   const { content, featuredImage, title } = data.wpgraphql.post

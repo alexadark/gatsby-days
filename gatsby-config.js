@@ -23,11 +23,32 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [
+          autoprefixer({
+            overrideBrowserslist: ["last 2 versions"],
+          }),
+        ],
+      },
   ],
 }
