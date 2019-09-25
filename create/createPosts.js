@@ -41,7 +41,7 @@ module.exports = async ({ actions, graphql }) => {
 
       const ids = nodes.map(node => node.postId)
       const blogTemplate = path.resolve(`./src/templates/blog.js`)
-      const blogPagePath = !variables.after ? `/` : `/page/${pageNumber}` //If after is empty, we are on the first page = root of the site if we choose to have the blog has front page
+      const blogPagePath = !variables.after ? `blog/` : `blog/${pageNumber}` //If after is empty, we are on the first page = root of the site if we choose to have the blog has front page
 
       blogPages[pageNumber] = {
         path: blogPagePath,
@@ -75,7 +75,7 @@ module.exports = async ({ actions, graphql }) => {
     allPosts.map(post => {
       console.log(`create post: ${post.uri}`)
       createPage({
-        path: `/blog/${post.uri}/`,
+        path: `/posts/${post.uri}/`,
         component: postTemplate,
         context: post,
       })

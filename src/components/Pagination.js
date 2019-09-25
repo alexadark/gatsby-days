@@ -38,7 +38,7 @@ const Pagination = ({ pageNumber, hasNextPage, allPosts, itemsPerPage }) => (
   <StyledPagination>
     {pageNumber > 1 && (
       <PrevNextLinks>
-        <Link to={pageNumber > 2 ? `/page/${pageNumber - 1}` : `/`}>
+        <Link to={pageNumber > 2 ? `blog/${pageNumber - 1}` : `/`}>
           Previous Posts
         </Link>
       </PrevNextLinks>
@@ -47,7 +47,7 @@ const Pagination = ({ pageNumber, hasNextPage, allPosts, itemsPerPage }) => (
       {Array.from({ length: allPosts.length / itemsPerPage }, (_, i) => (
         <Link
           key={`pagination-number${i + 1}`}
-          to={i === 0 ? "/" : `/page/${i + 1}`}
+          to={i === 0 ? `blog/` : `blog/${i + 1}`}
         >
           {i + 1}
         </Link>
@@ -55,7 +55,7 @@ const Pagination = ({ pageNumber, hasNextPage, allPosts, itemsPerPage }) => (
     </PageNumbers>
     {hasNextPage && (
       <PrevNextLinks>
-        <Link to={`page/${pageNumber + 1}`}>Next Posts</Link>
+        <Link to={`blog/${pageNumber + 1}`}>Next Posts</Link>
       </PrevNextLinks>
     )}
   </StyledPagination>
