@@ -1,3 +1,5 @@
+const { createRemoteFileNode } = require("gatsby-source-filesystem")
+
 const createPosts = require(`./create/createPosts`)
 const createSitePages = require(`./create/createSitePages`)
 
