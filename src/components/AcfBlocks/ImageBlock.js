@@ -1,5 +1,7 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx, Box, Flex, Styled } from "theme-ui"
 import { graphql } from "gatsby"
+import GatsbyImg from "../GatsbyImage"
 
 export const fragment = graphql`
   fragment imageBlockFragment on WPGraphQL_Page_Flexlayouts_FlexibleLayouts_ImageBlock {
@@ -11,10 +13,10 @@ export const fragment = graphql`
   }
 `
 
-export const ImageBlock = () => {
+export const ImageBlock = ({ cssclass, anchor, image }) => {
   return (
-    <div>
-      <h3>Image Block</h3>
-    </div>
+    <Box id={anchor} className={cssclass || ""}>
+      <GatsbyImg img={image} />
+    </Box>
   )
 }
