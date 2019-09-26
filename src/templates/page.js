@@ -22,7 +22,6 @@ const Page = ({ data }) => {
   } = data.wpgraphql.page
   return (
     <Layout>
-      <Styled.h1 dangerouslySetInnerHTML={{ __html: title }} />
       <Styled.root
         className="content"
         dangerouslySetInnerHTML={{ __html: content }}

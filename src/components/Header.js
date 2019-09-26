@@ -10,6 +10,7 @@ import {
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Menu from "./Menu"
+import Headroom from "react-headroom"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -26,18 +27,18 @@ const Header = () => {
   const { title, description } = data.wpgraphql.generalSettings
 
   return (
-    <StyledHeader id="masthead" className="site-header">
-      <Container>
-        <Flex sx={{ justifyContent: `space-between`, alignItems: `center` }}>
+    <Headroom>
+      <StyledHeader>
+        <Container>
           <h1 sx={{ variant: `text.branding` }}>
             <Link to="/" rel="home">
               {title}
             </Link>
           </h1>
           <Menu />
-        </Flex>
-      </Container>
-    </StyledHeader>
+        </Container>
+      </StyledHeader>
+    </Headroom>
   )
 }
 

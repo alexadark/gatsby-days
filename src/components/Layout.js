@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Layout as StyledLayout, Container } from "theme-ui"
+import { jsx, Layout as StyledLayout, Container, Main } from "theme-ui"
 import Header from "./Header.js"
 import Footer from "./Footer.js"
 import { Global } from "@emotion/core"
@@ -13,7 +13,7 @@ const Layout = ({ children }) => (
     <Global styles={GlobalStyles} />
     <StyledLayout>
       <Header />
-      <Container>{children}</Container>
+      <Main>{children}</Main>
       <Footer />
     </StyledLayout>
   </Grommet>

@@ -26,7 +26,7 @@ exports.createResolvers = ({
     WPGraphQL_MediaItem: {
       imageFile: {
         type: `File`,
-        resolve(source, args, context, info) {
+        resolve(source) {
           return createRemoteFileNode({
             url: source.sourceUrl,
             store,

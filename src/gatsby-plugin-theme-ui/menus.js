@@ -5,11 +5,11 @@ const sharedStyles = {
 export default {
   header: {
     ...sharedStyles,
-
-    alignItems: `end`,
+    alignItems: [`start`, `end`],
     ul: {
       display: `flex`,
-      justifyContent: `end`,
+      justifyContent: [`start`, `end`],
+      p: 0,
       m: 0,
       ">li": {
         pr: `20px`,
@@ -19,13 +19,13 @@ export default {
         a: {
           textDecoration: `none`,
           textTransform: `uppercase`,
-          color: `grey`,
+          color: `text`,
           fontSize: 1,
-          fontWeight: 300,
+          fontWeight: 400,
           letterSpacing: `1.5px`,
           border: `none`,
           "&:hover, &:active": {
-            color: `black`,
+            color: `primary`,
           },
         },
       },
