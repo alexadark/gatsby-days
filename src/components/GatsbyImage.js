@@ -3,14 +3,8 @@ import { jsx, Box, Flex, Styled } from "theme-ui"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const GatsbyImage = ({ img, className }) =>
-  img && (
-    <Img
-      fluid={img.imageFile.childImageSharp.fluid}
-      alt={img.altText}
-      className={className}
-    />
-  )
+const GatsbyImage = ({ img }) =>
+  img && <Img fluid={img.imageFile.childImageSharp.fluid} alt={img.altText} />
 
 export default GatsbyImage
 
