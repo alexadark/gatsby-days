@@ -15,4 +15,13 @@ export default {
       },
     },
   },
+  heading: {
+    textTransform: `uppercase`,
+    variant: `gradients.secondary`,
+    color: `white`,
+    py: 4,
+    px: 4,
+    fontWeight: 300,
+    borderRadius: `5px`,
+  },
 }

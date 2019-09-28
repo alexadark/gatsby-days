@@ -48,17 +48,26 @@ export default {
     letterSpacing: `1px`,
     a: {
       pb: `5px`,
+      color: `text`,
     },
   },
   pageNumbers: {
     a: {
       p: `5px 10px`,
-      bg: `light`,
+      variant: `gradients.secondary`,
+      borderRadius: `100%`,
+      color: `white`,
       border: `none`,
       mr: `5px`,
+      transition: `all .4s ease-in-out`,
+      boxShadow: `default`,
+      display: `inline-block`,
       "&:hover": {
-        bg: `#222`,
-        color: `white`,
+        transform: `translateY(-3px)`,
+        boxShadow: `hover`,
+      },
+      '&[aria-current="page"]': {
+        variant: `gradients.primary`,
       },
     },
   },

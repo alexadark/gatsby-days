@@ -14,7 +14,7 @@ export const fragment = graphql`
 `
 
 export const HeadingBlock = ({ heading, type, anchor, cssclass, centered }) => {
-  const style = centered && { textAlign: `center` }
+  const style = centered && { textAlign: `center`, variant: `text.heading` }
   return (
     <Heading
       id={anchor}

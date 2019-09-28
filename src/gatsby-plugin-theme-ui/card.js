@@ -1,6 +1,6 @@
 const sharedStyles = {
-  p: 7,
-  boxShadow: `default`,
+  p: [5, 6, 7],
+  boxShadow: `small`,
   mb: 8,
 }
 

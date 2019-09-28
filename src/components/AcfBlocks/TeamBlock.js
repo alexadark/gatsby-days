@@ -33,7 +33,7 @@ export const TeamBlock = ({ content, title, cssclass, anchor, teamMember }) => {
         <Separator my="40px" />
         <Styled.p dangerouslySetInnerHTML={{ __html: content }} />
       </Box>
-      <Flex>
+      <Flex sx={{ flexWrap: `wrap` }}>
         {teamMember.map(member => (
           <Box sx={{ width: [`50%`, `33%`, `25%`] }}>
             <TeamMember member={member} />

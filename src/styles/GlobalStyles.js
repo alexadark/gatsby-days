@@ -55,16 +55,9 @@ export const GlobalStyles = css`
     overflow-y: scroll;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    background: ${({ theme }) => theme.colors.primary};
+    background: whitesmoke;
   }
-  /**
-* Correct the font size and margin on h1 elements within section and
-* article contexts in Chrome, Firefox, and Safari.
-*/
-  h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-  }
+
   /* Grouping content
 * ========================================================================== */
   /**

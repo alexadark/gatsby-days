@@ -1,9 +1,8 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, Container } from "theme-ui"
 import { Box, Flex } from "rebass"
 import { Separator } from "../ui-components"
 import Project from "./ProjectItem"
-import Carousel from "nuka-carousel"
 import { graphql } from "gatsby"
 
 export const fragment = graphql`
@@ -39,26 +38,33 @@ export const ProjectsBlock = ({
   projects,
 }) => {
   return (
-    <Box id={anchor} className={cssclass || ""}>
+    <Box id={anchor} className={cssclass || ""} sx={{ my: 10 }}>
       <Box sx={{ textAlign: `center` }}>
-        <Styled.h3 dangerouslySetInnerHTML={{ __html: title }} />
-        <Separator my="40px" />
-        <Styled.h5 dangerouslySetInnerHTML={{ __html: subtitle }} />
+        <Styled.h3
+          dangerouslySetInnerHTML={{ __html: title }}
+          sx={{
+            variant: `text.heading`,
+          }}
+        />
+
+        <Styled.h4
+          dangerouslySetInnerHTML={{ __html: subtitle }}
+          sx={{ textAlign: `center`, mb: 0 }}
+        />
         <Box>
-          <Styled.root dangerouslySetInnerHTML={{ __html: content }} />
+          <Container sx={{ maxWidth: `l` }}>
+            <Styled.root
+              dangerouslySetInnerHTML={{ __html: content }}
+              sx={{ textAlign: `center` }}
+            />
+          </Container>
         </Box>
       </Box>
-      <Carousel
-        slidesToShow={3}
-        cellSpacing={20}
-        autoplay={true}
-        infiniteLoop={true}
-        sx={{ mt: 50 }}
-      >
+      <Flex sx={{ flexWrap: `wrap`, justifyContent: `center`, my: 10 }}>
         {projects.map(project => (
           <Project project={project} />
         ))}
-      </Carousel>
+      </Flex>
     </Box>
   )
 }

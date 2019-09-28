@@ -1,9 +1,8 @@
 /** @jsx jsx */
-import { jsx, Styled, Container, Box } from "theme-ui"
+import { jsx, Styled, Container, Box, Flex } from "theme-ui"
 import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import Pagination from "../components/Pagination"
-import GatsbyImg from "../components/GatsbyImage"
 import BgImage from "../components/BgImage"
 
 const Blog = ({ data, pageContext }) => {
@@ -33,6 +32,20 @@ const Blog = ({ data, pageContext }) => {
                   className="content"
                   dangerouslySetInnerHTML={{ __html: post.excerpt }}
                 />
+                <Flex
+                  sx={{
+                    justifyContent: [`center`, `flex-end`],
+                    mt: 7,
+                    mr: [0, 10],
+                  }}
+                >
+                  <Link
+                    to={`/posts/${post.uri}`}
+                    sx={{ variant: `buttons.secondary` }}
+                  >
+                    Read More
+                  </Link>
+                </Flex>
               </Box>
             </article>
           ))}

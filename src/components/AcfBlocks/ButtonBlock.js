@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 import { Button, Flex, Box } from "rebass"
 import { graphql, Link } from "gatsby"
+import config from "../../../config"
 
 export const fragment = graphql`
   fragment buttonBlockFragment on WPGraphQL_Page_Flexlayouts_FlexibleLayouts_ButtonBlock {
@@ -25,6 +26,7 @@ export const ButtonBlock = ({
   position,
 }) => {
   const { title, target, url } = button
+  const buttonUrl = url.replace(config.wordPressUrl, "")
   const style =
     position === "center"
       ? { justifyContent: `center` }
@@ -45,7 +47,7 @@ export const ButtonBlock = ({
               {title}
             </a>
           ) : (
-            <Link to={url}>{title}</Link>
+            <Link to={buttonUrl}>{title}</Link>
           )}
         </Button>
       </Box>

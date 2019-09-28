@@ -15,7 +15,21 @@ export const fragment = graphql`
 
 export const ImageBlock = ({ cssclass, anchor, image }) => {
   return (
-    <Box id={anchor} className={cssclass || ""}>
+    <Box
+      id={anchor}
+      className={cssclass || ""}
+      sx={{
+        ".gatsby-image-wrapper": {
+          borderRadius: `10px`,
+          maxHeight: 400,
+          maxWidth: 700,
+
+          boxShadow: `default`,
+          mx: `auto`,
+          my: 10,
+        },
+      }}
+    >
       <GatsbyImg img={image} />
     </Box>
   )

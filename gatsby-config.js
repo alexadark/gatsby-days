@@ -19,6 +19,15 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-wpgraphql-inline-images",
+      options: {
+        wordPressUrl: `${config.wordPressUrl}`,
+        uploadsUrl: `${config.wordPressUrl}/wp-content/uploads/`,
+        processPostTypes: ["Page", "Post", "Projects"],
+        graphqlTypeName: "WPGraphQL",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -30,6 +39,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
+    `gatsby-theme-style-guide`,
     `gatsby-plugin-sass`,
     {
       resolve: "gatsby-plugin-postcss",

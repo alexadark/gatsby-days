@@ -16,7 +16,7 @@ export const ContentBlock = ({ content, anchor, cssclass }) => (
     className={cssclass || ""}
     dangerouslySetInnerHTML={{ __html: content }}
     sx={{
-      width: `l`,
+      maxWidth: `l`,
       mx: `auto`,
       mb: 7,
       mt: 5,
