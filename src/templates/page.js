@@ -22,10 +22,13 @@ const Page = ({ data }) => {
   } = data.wpgraphql.page
   return (
     <Layout>
-      <Styled.root
-        className="content"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+      {content && (
+        <Styled.root
+          className="content"
+          dangerouslySetInnerHTML={{ __html: content }}
+          sx={{ variant: `card.default` }}
+        />
+      )}
       {flexibleLayouts.length > 0 &&
         flexibleLayouts.map(block => {
           switch (block.__typename) {

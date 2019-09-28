@@ -6,7 +6,10 @@ const sharedButtonStyles = {
   fontWeight: `bold`,
   transition: `all 0.4s ease-in-out`,
   letterSpacing: 1,
-  boxShadow: `md`,
+  boxShadow: `default`,
+  py: `10px`,
+  px: `30px`,
+  borderRadius: `30px`,
   "&:hover": {
     transform: `translateY(-5px)`,
     boxShadow: `hover`,
@@ -16,18 +19,14 @@ const sharedButtonStyles = {
 export default {
   primary: {
     ...sharedButtonStyles,
-    borderRadius: 5,
+
     bg: `primary`,
     fontSize: 1,
-    px: 2,
-    py: 1,
   },
   secondary: {
     ...sharedButtonStyles,
-    borderRadius: 5,
+
     bg: `secondary`,
     fontSize: 1,
-    px: 2,
-    py: 1,
   },
 }

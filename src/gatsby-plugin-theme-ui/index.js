@@ -2,6 +2,7 @@ import colors from "./colors"
 import buttons from "./buttons"
 import menus from "./menus"
 import text from "./text"
+import card from "./card"
 import Header from "./header"
 import { fonts, fontSizes, fontWeights, lineHeights, base } from "./typo"
 
@@ -53,6 +54,7 @@ export default {
   },
   buttons,
   menus,
+  card,
   //grommet
   accordion: {
     heading: {
