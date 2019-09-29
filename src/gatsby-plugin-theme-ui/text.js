@@ -23,5 +23,6 @@ export default {
     px: 4,
     fontWeight: 300,
     borderRadius: `5px`,
+    textAlign: `center`,
   },
 }

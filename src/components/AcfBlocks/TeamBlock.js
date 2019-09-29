@@ -28,9 +28,7 @@ export const TeamBlock = ({ content, title, cssclass, anchor, teamMember }) => {
   return (
     <Box id={anchor} className={cssclass || ""}>
       <Box sx={{ textAlign: `center` }}>
-        <Styled.h3 dangerouslySetInnerHTML={{ __html: title }} />
-
-        <Separator my="40px" />
+        <Styled.h3 dangerouslySetInnerHTML={{ __html: title }} sx={{variant: `text.heading`}} />
         <Styled.p dangerouslySetInnerHTML={{ __html: content }} />
       </Box>
       <Flex sx={{ flexWrap: `wrap` }}>
