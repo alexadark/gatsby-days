@@ -21,15 +21,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-wpgraphql-inline-images",
-      options: {
-        wordPressUrl: `${config.wordPressUrl}`,
-        uploadsUrl: `${config.wordPressUrl}/wp-content/uploads/`,
-        processPostTypes: ["Page", "Post", "Projects"],
-        graphqlTypeName: "WPGraphQL",
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
