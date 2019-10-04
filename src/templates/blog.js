@@ -20,7 +20,7 @@ const Blog = ({ data, pageContext }) => {
                   <BgImage img={post.featuredImage} height="400px" />
                 </Box>
               </Link>
-              <Box sx={{ variant: `card.default` }}>
+              <Box sx={{ variant: `card.default`, mb: 8 }}>
                 <Styled.h2>
                   <Link
                     to={`/posts/${post.uri}`}
