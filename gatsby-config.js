@@ -1,6 +1,5 @@
 const autoprefixer = require("autoprefixer")
 const config = require("./config")
-// const wpUrl = process.env.GATSBY_WP_URL
 
 module.exports = {
   siteMetadata: {

@@ -2,7 +2,7 @@
  * @type {{wordPressUrl: string}}
  */
 const config = {
-  wordPressUrl: `http://localhost/gatsby-days`,
+  wordPressUrl: `http://alexandraspalato.com/webstantly`,
 }
 
 module.exports = config
