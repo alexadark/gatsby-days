@@ -7,16 +7,17 @@ import { GlobalStyles } from "../styles/GlobalStyles"
 import { Grommet } from "grommet"
 import theme from "../gatsby-plugin-theme-ui"
 import "../styles/scss/styles.scss"
+import { ThemeProvider } from "@chakra-ui/core"
 
 const Layout = ({ children }) => (
-  <Grommet theme={theme} plain>
+  <ThemeProvider theme={theme}>
     <Global styles={GlobalStyles} />
     <StyledLayout>
       <Header />
       <Main>{children}</Main>
       <Footer />
     </StyledLayout>
-  </Grommet>
+  </ThemeProvider>
 )
 
 export default Layout
