@@ -65,6 +65,7 @@ export const pageQuery = graphql`
         uri
         flexLayouts {
           flexibleLayouts {
+            __typename
             ...contentBlockFragment
             ...projectsBlockFragment
             ...imageBlockFragment
