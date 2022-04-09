@@ -38,7 +38,7 @@
     "gatsby-wpgraphql-inline-images": "^0.2.3",
     "grommet": "^2.9.0",
     "grommet-icons": "^4.4.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "node-sass": "^4.13.0",
     "nuka-carousel": "^4.5.13",
     "polished": "^3.4.2",
